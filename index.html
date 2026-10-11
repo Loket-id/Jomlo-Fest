@@ -6,6 +6,7 @@
   <title>Jomlo Festival 2026 Chapter Jogja | Artatix</title>
   <meta name="theme-color" content="#2036c9">
   <meta name="color-scheme" content="light">
+  <meta name="format-detection" content="telephone=no">
   <meta name="description" content="Jomlo Festival 2026 Chapter Jogja — 14 November 2026, 15:00–23:00 di Yogyakarta, Daerah Istimewa Yogyakarta. Tiket mulai Rp123.456 hanya di Artatix.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Artatix">
@@ -14,6 +15,10 @@
   <meta property="og:image" content="banner.png">
   <meta property="og:image:alt" content="Jomlo Festival 2026 Chapter Jogja">
   <meta property="og:locale" content="id_ID">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Jomlo Festival 2026 Chapter Jogja">
+  <meta name="twitter:description" content="14 November 2026, 15:00–23:00 di Yogyakarta. Tiket mulai Rp123.456.">
+  <meta name="twitter:image" content="banner.png">
   <link rel="icon" type="image/png" href="logo-saya.png">
   <link rel="apple-touch-icon" href="logo-saya.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -36,6 +41,13 @@
     },
     "image":["banner.png"],
     "description":"Jomlo Festival 2026 Chapter Jogja — festival musik 100% Koplo menghadirkan NDX AKA, Denny Caknan, Guyon Waton, Aftershine, Lavora, dan lain-lain.",
+    "performer":[
+      {"@type":"MusicGroup","name":"NDX AKA"},
+      {"@type":"MusicGroup","name":"Denny Caknan"},
+      {"@type":"MusicGroup","name":"Guyon Waton"},
+      {"@type":"MusicGroup","name":"Aftershine"},
+      {"@type":"MusicGroup","name":"Lavora"}
+    ],
     "organizer":{"@type":"Organization","name":"Kontener Production"},
     "offers":{"@type":"Offer","price":"123456","priceCurrency":"IDR","availability":"https://schema.org/InStock","url":"tiket.html"}
   }
@@ -168,6 +180,7 @@
     .search-clear[hidden]{display:none}
     .search-results{
       display:none;margin-top:9px;max-height:min(300px,52vh);overflow-y:auto;
+      overscroll-behavior:contain;
       background:#fff;border-radius:14px;box-shadow:0 14px 34px rgba(5,15,40,.28);
     }
     .search-results.open{display:block}
@@ -204,7 +217,9 @@
       z-index:70;display:flex;flex-direction:column;
       width:min(320px,88vw);
       padding:calc(14px + env(safe-area-inset-top,0px)) 18px calc(18px + env(safe-area-inset-bottom,0px));
-      overflow-y:auto;color:#e9efff;
+      overflow-y:auto;
+      overscroll-behavior:contain;
+      color:#e9efff;
       background:
         radial-gradient(120% 90% at 100% 0%,rgba(90,130,255,.25),transparent 55%),
         linear-gradient(160deg,#0a1231 0%,#0e1d47 60%,#101f49 100%);
@@ -253,6 +268,7 @@
       margin:16px 0 0;
       font-size:25px;line-height:1.32;font-weight:700;
       letter-spacing:-.01em;color:var(--ink);
+      text-wrap:balance;
     }
 
     .section-title{margin:28px 0 14px;font-size:22px;font-weight:700;color:var(--ink)}
@@ -319,7 +335,10 @@
       height:3px;border-radius:3px 3px 0 0;background:var(--brand);
     }
 
-    .content-section{scroll-margin-top:118px;margin-bottom:36px}
+    .content-section{
+      scroll-margin-top:118px;margin-bottom:36px;
+      content-visibility:auto;contain-intrinsic-size:auto 640px;
+    }
     .content-section h2{margin:24px 0 12px;font-size:24px;font-weight:700;color:var(--ink)}
 
     .description p{margin:0 0 14px;font-size:16.5px;line-height:1.75;color:var(--ink-soft)}
@@ -441,7 +460,7 @@
   <div class="menu-drawer" id="menuDrawer" role="dialog" aria-modal="true" aria-label="Menu navigasi">
     <div class="menu-head">
       <span class="brand">
-        <img src="logo-saya.png" alt="Artatix" width="200" height="64" decoding="async">
+        <img src="logo-saya.png" alt="Artatix" width="200" height="64" loading="lazy" decoding="async">
       </span>
       <button class="icon-btn" id="drawerClose" type="button" aria-label="Tutup menu">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
@@ -693,9 +712,24 @@
           else tab.removeAttribute("aria-current");
         });
       };
+
+      let spyLock = false;
+      const releaseSpy = () => { spyLock = false; };
+      const lockSpy = () => {
+        spyLock = true;
+        clearTimeout(lockSpy.t);
+        if ("onscrollend" in window) {
+          window.addEventListener("scrollend", releaseSpy, { once: true });
+          lockSpy.t = setTimeout(releaseSpy, 1500);
+        } else {
+          lockSpy.t = setTimeout(releaseSpy, 900);
+        }
+      };
+
       tabs.forEach((tab) => {
         tab.addEventListener("click", () => {
           activateTab(tab.dataset.tab);
+          lockSpy();
           const target = document.getElementById(tab.dataset.tab);
           if (target) target.scrollIntoView({ behavior: "smooth", block: "start" });
         });
@@ -704,6 +738,7 @@
       const panels = $$("[data-panel]");
       if ("IntersectionObserver" in window) {
         const observer = new IntersectionObserver((entries) => {
+          if (spyLock) return;
           const visible = entries
             .filter((entry) => entry.isIntersecting)
             .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
@@ -774,16 +809,19 @@
           escapeHTML(text.slice(pos + len, end) + (end < text.length ? "…" : ""));
       };
 
+      let currentHits = [];
       const renderResults = (raw) => {
         const q = raw.trim();
         searchClear.hidden = !q;
         if (!q) {
           searchResults.classList.remove("open");
           searchResults.innerHTML = "";
+          currentHits = [];
           return;
         }
         searchResults.classList.add("open");
         if (q.length < 2) {
+          currentHits = [];
           searchResults.innerHTML = '<div class="sr-empty">Ketik minimal 2 huruf untuk mulai mencari.</div>';
           return;
         }
@@ -794,11 +832,13 @@
           if (rx.test(item.text)) hits.push(item);
         }
         if (!hits.length) {
+          currentHits = [];
           searchResults.innerHTML = '<div class="sr-empty">Tidak ada hasil untuk &ldquo;' + escapeHTML(q) + '&rdquo;.</div>';
           return;
         }
+        currentHits = hits.slice(0, MAX_RESULTS);
         searchResults.innerHTML =
-          hits.slice(0, MAX_RESULTS).map((item, i) =>
+          currentHits.map((item, i) =>
             '<button type="button" class="sr-item" data-i="' + i + '">' +
             '<span class="sr-badge">' + item.label + '</span>' +
             '<span class="sr-text">' + snippet(item.text, q) + '</span></button>'
@@ -806,14 +846,16 @@
           (hits.length > MAX_RESULTS
             ? '<div class="sr-more">+' + (hits.length - MAX_RESULTS) + ' hasil lainnya — coba kata kunci lebih spesifik</div>'
             : "");
-        $$(".sr-item", searchResults).forEach((btn) => {
-          btn.addEventListener("click", () => {
-            const target = hits[Number(btn.dataset.i)].el;
-            closeSearch();
-            jumpTo(target);
-          });
-        });
       };
+
+      searchResults.addEventListener("click", (e) => {
+        const btn = e.target.closest(".sr-item");
+        if (!btn) return;
+        const hit = currentHits[Number(btn.dataset.i)];
+        if (!hit) return;
+        closeSearch();
+        jumpTo(hit.el);
+      });
 
       searchToggle.addEventListener("click", () => {
         searchPanel.classList.contains("open") ? closeSearch() : openSearch();
@@ -840,12 +882,14 @@
       const menuDrawer = document.getElementById("menuDrawer");
       const menuBackdrop = document.getElementById("menuBackdrop");
       const drawerClose = document.getElementById("drawerClose");
+      const inertTargets = [...document.body.children].filter((el) => el !== menuDrawer && el !== menuBackdrop);
       let lastFocus = null;
 
       const openMenu = () => {
         lastFocus = document.activeElement;
         menuDrawer.classList.add("open");
         menuBackdrop.classList.add("open");
+        inertTargets.forEach((el) => el.setAttribute("inert", ""));
         menuToggle.setAttribute("aria-expanded", "true");
         menuToggle.setAttribute("aria-label", "Tutup menu navigasi");
         document.body.classList.add("no-scroll");
@@ -854,6 +898,7 @@
       const closeMenu = () => {
         menuDrawer.classList.remove("open");
         menuBackdrop.classList.remove("open");
+        inertTargets.forEach((el) => el.removeAttribute("inert"));
         menuToggle.setAttribute("aria-expanded", "false");
         menuToggle.setAttribute("aria-label", "Buka menu navigasi");
         document.body.classList.remove("no-scroll");
