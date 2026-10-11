@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Pilih Kategori Tiket | Jomlo Festival 2026 Chapter Jogja</title>
+<meta name="theme-color" content="#2036c9">
+<meta name="color-scheme" content="light">
+<meta name="format-detection" content="telephone=no">
+<meta name="description" content="Pilih kategori tiket Jomlo Festival 2026 Chapter Jogja — Reguler Jomlo Area (Festival) mulai Rp123.456 dan Reguler Bolo Area (VIP) Rp200.026 hanya di Artatix.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Artatix">
+<meta property="og:title" content="Pilih Kategori Tiket | Jomlo Festival 2026">
+<meta property="og:description" content="Reguler Jomlo Area mulai Rp123.456 · Reguler Bolo Area (VIP) Rp200.026.">
+<meta property="og:image" content="banner.png">
+<meta property="og:image:alt" content="Jomlo Festival 2026 Chapter Jogja">
+<meta property="og:locale" content="id_ID">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Pilih Kategori Tiket | Jomlo Festival 2026">
+<meta name="twitter:description" content="Reguler Jomlo Area mulai Rp123.456 · Reguler Bolo Area (VIP) Rp200.026.">
+<meta name="twitter:image" content="banner.png">
+<link rel="icon" type="image/png" href="logo-saya.png">
+<link rel="apple-touch-icon" href="logo-saya.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --brand:#2b4acf;--brand-2:#3a5be0;--brand-deep:#2340bd;--brand-dark:#2036c9;
+  --brand-glow:rgba(43,74,207,.35);
+  --ink:#111827;--ink-soft:#1f2937;--muted:#667085;--faint:#98a2b3;
+  --line:#e7eaf1;--tint:#f4f6fd;--tint-2:#e9edfd;
+  --green:#15803d;--green-bg:#e7f6ee;--amber:#b45309;
+  --radius:20px;
+  --shadow-card:0 2px 8px rgba(18,45,143,.05),0 16px 40px rgba(18,45,143,.10);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100vh;background:#fff;color:var(--ink);
+  font-family:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;-webkit-tap-highlight-color:transparent}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+a:focus-visible,button:focus-visible{outline:2px solid var(--brand);outline-offset:3px;border-radius:8px}
+.wrap{width:100%;max-width:480px;margin:0 auto;padding:0 20px}
+
+.topbar{background:#fff}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-top:13px;padding-bottom:13px}
+.brand img{width:auto;height:26px}
+.lang{display:inline-flex;align-items:center;gap:9px;padding:8px 15px;border-radius:999px;
+  background:var(--tint-2);color:var(--ink);font-size:13.5px;font-weight:700}
+.flag{width:20px;height:20px;border-radius:50%;
+  background:linear-gradient(180deg,#eb4d4b 0 50%,#fff 50% 100%);
+  box-shadow:inset 0 0 0 1px rgba(18,24,40,.12)}
+
+.progress{background:var(--brand-dark);color:#fff;padding:14px 0 15px}
+.steps{list-style:none;margin:0;padding:0;display:flex;align-items:center;justify-content:space-between}
+.step{display:inline-flex;align-items:center;gap:9px}
+.step-num{width:28px;height:28px;min-width:28px;border-radius:50%;
+  display:inline-flex;align-items:center;justify-content:center;
+  text-align:center;vertical-align:middle;
+  background:rgba(255,255,255,.16);color:rgba(255,255,255,.78);
+  font-size:12.5px;font-weight:800;line-height:28px;padding:0}
+.step.current .step-num{background:#fff;color:var(--brand-dark);box-shadow:0 3px 10px rgba(0,0,0,.22)}
+.step-name{font-size:13.5px;font-weight:800;color:#fff;white-space:nowrap;letter-spacing:.01em}
+.sep{color:rgba(255,255,255,.38);font-size:15px;font-weight:800;line-height:1;flex:none}
+
+main.wrap{padding-top:22px;padding-bottom:40px}
+.banner{width:100%;height:auto;border-radius:18px;box-shadow:var(--shadow-card)}
+
+.page-head{display:flex;align-items:center;gap:14px;margin-top:24px}
+.head-ico{flex:none;width:44px;height:44px;border-radius:14px;background:var(--tint-2);color:var(--brand);
+  display:flex;align-items:center;justify-content:center}
+.head-ico svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.heading{margin:0;font-size:22px;font-weight:800;letter-spacing:-.01em;line-height:1.25;text-wrap:balance}
+.subhead{margin:2px 0 0;font-size:13px;font-weight:600;color:var(--muted);line-height:1.5}
+
+.tickets{display:grid;gap:16px;margin-top:18px}
+.ticket{position:relative;background:#fff;border:1.5px solid var(--line);border-radius:var(--radius);padding:16px 18px 18px;
+  transition:transform .2s ease,box-shadow .25s ease,border-color .25s ease,background .25s ease}
+@media(hover:hover){.ticket:hover{transform:translateY(-2px);box-shadow:var(--shadow-card)}}
+.ticket.selected{border-color:var(--brand);background:linear-gradient(180deg,#f7f9ff,#fff);box-shadow:0 0 0 3px var(--tint-2),var(--shadow-card)}
+
+.status{display:inline-flex;align-items:center;gap:6px;padding:6px 11px;border-radius:999px;
+  background:var(--green-bg);color:var(--green);
+  font-size:10.5px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;
+  transition:background .25s,color .25s}
+.dot-live{width:6px;height:6px;min-width:6px;border-radius:50%;background:currentColor;animation:pulse 1.6s ease-in-out infinite}
+.ico-check{display:none;width:11px;height:11px}
+.ticket.selected .status{background:var(--tint-2);color:var(--brand)}
+.ticket.selected .dot-live{display:none}
+.ticket.selected .ico-check{display:block}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+
+.ticket-main h2{margin:12px 0 0;font-size:17.5px;font-weight:800;line-height:1.35;color:var(--ink)}
+.time{display:inline-flex;align-items:center;gap:6px;margin-top:7px;font-size:12.5px;font-weight:700;color:var(--amber)}
+.time svg{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round}
+.ticket-bottom{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:18px}
+.ticket-price{font-size:23px;font-weight:800;color:var(--brand);letter-spacing:-.01em;line-height:1}
+.ticket-actions{display:flex;align-items:center}
+
+.choose{position:relative;overflow:hidden;border:0;border-radius:12px;padding:12px 22px;
+  background:linear-gradient(160deg,var(--brand-2),var(--brand));color:#fff;
+  font-size:14.5px;font-weight:700;box-shadow:0 8px 20px var(--brand-glow);
+  transition:transform .15s ease,box-shadow .2s ease}
+.choose:active{transform:scale(.96)}
+
+.qty-control{display:inline-flex;align-items:center;gap:2px;padding:3px;
+  border:1.5px solid var(--brand);border-radius:999px;background:var(--tint)}
+.qty-control[hidden]{display:none!important}
+.qty-btn{position:relative;overflow:hidden;width:32px;height:32px;min-width:32px;border:0;border-radius:50%;
+  background:#fff;color:var(--brand);font-size:18px;font-weight:800;line-height:32px;text-align:center;padding:0;
+  display:inline-flex;align-items:center;justify-content:center;
+  transition:background .15s,color .15s,transform .12s}
+.qty-btn:hover{background:var(--brand);color:#fff}
+.qty-btn:active{transform:scale(.9)}
+.qty{min-width:30px;text-align:center;font-size:15px;font-weight:800;color:var(--ink)}
+
+.footer{display:grid;justify-items:center;gap:11px;
+  padding:34px 20px calc(115px + env(safe-area-inset-bottom));
+  border-top:1px solid var(--line);text-align:center}
+.footer-logo{width:190px;height:34px;object-fit:contain}
+.footer-contact{font-size:14px;font-weight:600;color:var(--muted);transition:color .2s}
+.footer-contact:hover{color:var(--brand)}
+.footer-copy{margin:0;font-size:12px;color:var(--faint)}
+
+.buybar{position:fixed;left:0;right:0;bottom:0;z-index:50;
+  display:flex;justify-content:center;
+  padding:0 10px calc(10px + env(safe-area-inset-bottom));pointer-events:none}
+.buybar .row{pointer-events:auto;width:100%;max-width:460px;
+  display:flex;align-items:center;justify-content:space-between;gap:14px;
+  padding:13px 15px 14px;
+  background:rgba(255,255,255,.88);border:1px solid rgba(255,255,255,.6);
+  -webkit-backdrop-filter:blur(16px) saturate(160%);backdrop-filter:blur(16px) saturate(160%);
+  border-radius:16px;box-shadow:0 12px 44px rgba(15,23,42,.16),0 2px 10px rgba(15,23,42,.08)}
+.price-label{display:block;font-size:12.5px;font-weight:600;color:var(--muted)}
+.price{display:block;margin-top:1px;font-size:22px;font-weight:800;letter-spacing:-.01em;color:var(--ink);line-height:1.1}
+.price.bump{animation:bump .4s cubic-bezier(.3,1.4,.5,1)}
+@keyframes bump{50%{transform:scale(1.07)}}
+.buy{position:relative;overflow:hidden;flex:none;height:48px;padding:0 26px;border:0;border-radius:12px;
+  background:linear-gradient(160deg,var(--brand-2),var(--brand));color:#fff;
+  font-size:15.5px;font-weight:700;box-shadow:0 10px 24px var(--brand-glow);
+  transition:transform .15s ease,box-shadow .2s,opacity .2s}
+.buy:not(:disabled):active{transform:scale(.97)}
+.buy:disabled{opacity:.5;cursor:not-allowed;box-shadow:none}
+
+.toast{position:fixed;left:50%;bottom:calc(110px + env(safe-area-inset-bottom));
+  transform:translateX(-50%) translateY(10px);z-index:60;max-width:88vw;
+  padding:12px 18px;border-radius:999px;background:var(--ink);color:#fff;
+  font-size:13.5px;font-weight:700;text-align:center;
+  box-shadow:0 12px 30px rgba(24,29,58,.35);
+  opacity:0;pointer-events:none;transition:opacity .3s,transform .3s}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+
+.ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.45);transform:scale(0);
+  animation:ripple .6s ease-out forwards;pointer-events:none}
+@keyframes ripple{to{transform:scale(3);opacity:0}}
+
+@media(max-width:380px){
+  .heading{font-size:20px}
+  .ticket-price{font-size:21px}
+  .buy{padding:0 20px;font-size:14.5px}
+  .choose{padding:11px 18px}
+  .step-num{width:26px;height:26px;min-width:26px;font-size:12px;line-height:26px}
+  .step-name{font-size:12.5px}
+  .sep{font-size:13px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap bar">
+    <a class="brand" href="index.html" aria-label="Artatix — kembali ke beranda">
+      <img src="logo-artatix.png" alt="Artatix" width="148" height="39" decoding="async">
+    </a>
+    <span class="lang"><span class="flag" aria-hidden="true"></span>ID</span>
+  </div>
+</header>
+
+<nav class="progress" aria-label="Langkah pemesanan">
+  <ol class="steps wrap">
+    <li class="step current" aria-current="step">
+      <span class="step-num">1</span>
+      <span class="step-name">Pilih Kategori</span>
+    </li>
+    <li class="sep" aria-hidden="true">›</li>
+    <li class="step"><span class="step-num">2</span></li>
+    <li class="sep" aria-hidden="true">›</li>
+    <li class="step"><span class="step-num">3</span></li>
+    <li class="sep" aria-hidden="true">›</li>
+    <li class="step"><span class="step-num">4</span></li>
+  </ol>
+</nav>
+
+<main class="wrap">
+  <img class="banner" src="banner.png" alt="Jomlo Festival 2026 Chapter Jogja" width="550" height="230" fetchpriority="high" decoding="async">
+
+  <div class="page-head">
+    <span class="head-ico" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M4 7.5A1.5 1.5 0 0 1 5.5 6h13A1.5 1.5 0 0 1 20 7.5v2.2a2.3 2.3 0 0 0 0 4.6v2.2a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 4 16.5v-2.2a2.3 2.3 0 0 0 0-4.6Z"/><path d="M14 6v12" stroke-dasharray="2.5 2.5"/></svg>
+    </span>
+    <div>
+      <h1 class="heading">Kategori Tiket</h1>
+      <p class="subhead">Jomlo Festival 2026 Chapter Jogja · 14 Nov 2026 · Yogyakarta</p>
+    </div>
+  </div>
+
+  <section class="tickets" aria-label="Daftar kategori tiket">
+    <article class="ticket" data-ticket-card data-id="reguler-jomlo" data-name="Reguler - Jomlo Area (Festival)" data-price="123456">
+      <span class="status">
+        <span class="dot-live" aria-hidden="true"></span>
+        <svg class="ico-check" aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="status-text">On Sale</span>
+      </span>
+      <div class="ticket-main">
+        <h2>Reguler - Jomlo Area (Festival)</h2>
+        <span class="time">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg>
+          Waktu Terbatas
+        </span>
+        <div class="ticket-bottom">
+          <div class="ticket-price">Rp123.456</div>
+          <div class="ticket-actions">
+            <button class="choose" type="button" data-choose>Pilih Tiket</button>
+            <div class="qty-control" data-qty-control hidden>
+              <button type="button" class="qty-btn" data-minus aria-label="Kurangi jumlah tiket">−</button>
+              <output class="qty" data-qty aria-live="polite">1</output>
+              <button type="button" class="qty-btn" data-plus aria-label="Tambah jumlah tiket">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="ticket" data-ticket-card data-id="reguler-bolo-vip" data-name="Reguler - Bolo Area (VIP)" data-price="200026">
+      <span class="status">
+        <span class="dot-live" aria-hidden="true"></span>
+        <svg class="ico-check" aria-hidden="true" viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <span class="status-text">On Sale</span>
+      </span>
+      <div class="ticket-main">
+        <h2>Reguler - Bolo Area (VIP)</h2>
+        <span class="time">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.2 2"/></svg>
+          Waktu Terbatas
+        </span>
+        <div class="ticket-bottom">
+          <div class="ticket-price">Rp200.026</div>
+          <div class="ticket-actions">
+            <button class="choose" type="button" data-choose>Pilih Tiket</button>
+            <div class="qty-control" data-qty-control hidden>
+              <button type="button" class="qty-btn" data-minus aria-label="Kurangi jumlah tiket">−</button>
+              <output class="qty" data-qty aria-live="polite">1</output>
+              <button type="button" class="qty-btn" data-plus aria-label="Tambah jumlah tiket">+</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </section>
+</main>
+
+<footer class="footer">
+  <img class="footer-logo" src="logo-artatix.png" alt="Artatix" width="190" height="34" loading="lazy" decoding="async">
+  <a class="footer-contact" href="https://wa.me/6282137676220"><span aria-hidden="true">☏ </span>+62 821-3767-6220</a>
+  <a class="footer-contact" href="mailto:cs@artatix.co.id"><span aria-hidden="true">✉ </span>cs@artatix.co.id</a>
+  <p class="footer-copy">© 2026 Artatix. Hak Cipta Dilindungi.</p>
+</footer>
+
+<section class="buybar" role="region" aria-label="Pembelian tiket">
+  <div class="row">
+    <div aria-live="polite">
+      <span class="price-label" data-total-label>Harga Mulai dari</span>
+      <strong class="price" data-total-price>Rp123.456</strong>
+    </div>
+    <button class="buy" type="button" data-buy disabled>Beli Sekarang</button>
+  </div>
+</section>
+
+<div class="toast" role="status"></div>
+
+<script>
+(() => {
+  "use strict";
+
+  const q = (s, c = document) => c.querySelector(s);
+  const qa = (s, c = document) => [...c.querySelectorAll(s)];
+
+  const MAX_QTY = 5;
+  const STORE_KEY = "jomlo_selection";
+  const IDR = new Intl.NumberFormat("id-ID");
+  const fmtIDR = (n) => "Rp" + IDR.format(n);
+
+  const buyBtn = q("[data-buy]");
+  const priceEl = q("[data-total-price]");
+  const labelEl = q("[data-total-label]");
+  const toastEl = q(".toast");
+  const ticketsEl = q(".tickets");
+  const cards = qa("[data-ticket-card]");
+
+  let toastT;
+  const toast = (msg) => {
+    if (!toastEl) return;
+    toastEl.textContent = msg;
+    toastEl.classList.add("show");
+    clearTimeout(toastT);
+    toastT = setTimeout(() => toastEl.classList.remove("show"), 2400);
+  };
+
+  const qtyOf = (card) => Number(card.dataset.qty || 0);
+
+  const paint = (card) => {
+    const on = qtyOf(card) > 0;
+    card.classList.toggle("selected", on);
+    const txt = q(".status-text", card);
+    if (txt) txt.textContent = on ? "Dipilih" : "On Sale";
+  };
+
+  const updateBar = (bump) => {
+    let total = 0;
+    let count = 0;
+    cards.forEach((c) => {
+      const cq = qtyOf(c);
+      total += cq * Number(c.dataset.price);
+      count += cq;
+    });
+    if (count === 0) {
+      const min = Math.min(...cards.map((c) => Number(c.dataset.price)));
+      priceEl.textContent = fmtIDR(min);
+      labelEl.textContent = "Harga Mulai dari";
+    } else {
+      priceEl.textContent = fmtIDR(total);
+      labelEl.textContent = count === 1 ? "Total" : "Total · " + count + " tiket";
+    }
+    buyBtn.disabled = count === 0;
+    if (bump) {
+      priceEl.classList.remove("bump");
+      void priceEl.offsetWidth;
+      priceEl.classList.add("bump");
+    }
+  };
+
+  const select = (card) => {
+    card.dataset.qty = 1;
+    q("[data-choose]", card).hidden = true;
+    q("[data-qty-control]", card).hidden = false;
+    q("[data-qty]", card).textContent = "1";
+    paint(card);
+  };
+
+  const deselect = (card) => {
+    card.dataset.qty = 0;
+    q("[data-choose]", card).hidden = false;
+    q("[data-qty-control]", card).hidden = true;
+    paint(card);
+  };
+
+  const change = (card, delta) => {
+    const next = qtyOf(card) + delta;
+    if (next <= 0) return deselect(card);
+    if (next > MAX_QTY) return toast("Maksimal " + MAX_QTY + " tiket per kategori");
+    card.dataset.qty = next;
+    q("[data-qty]", card).textContent = next;
+  };
+
+  ticketsEl.addEventListener("click", (e) => {
+    const btn = e.target.closest("[data-choose],[data-plus],[data-minus]");
+    if (!btn) return;
+    const card = btn.closest("[data-ticket-card]");
+    if (!card) return;
+    if (btn.hasAttribute("data-choose")) {
+      select(card);
+      q("[data-plus]", card).focus();
+    } else if (btn.hasAttribute("data-plus")) {
+      change(card, 1);
+    } else {
+      change(card, -1);
+      if (qtyOf(card) === 0) q("[data-choose]", card).focus();
+    }
+    updateBar(true);
+  });
+
+  try {
+    const saved = JSON.parse(sessionStorage.getItem(STORE_KEY) || "[]");
+    if (Array.isArray(saved)) {
+      saved.forEach((item) => {
+        const hit = cards.find((c) => c.dataset.id === item.id);
+        if (hit && item.qty > 0) {
+          const qty = Math.min(item.qty, MAX_QTY);
+          hit.dataset.qty = qty;
+          q("[data-choose]", hit).hidden = true;
+          q("[data-qty-control]", hit).hidden = false;
+          q("[data-qty]", hit).textContent = qty;
+          paint(hit);
+        }
+      });
+    }
+  } catch (e) {}
+
+  updateBar(false);
+
+  buyBtn.addEventListener("click", () => {
+    const items = cards
+      .filter((c) => qtyOf(c) > 0)
+      .map((c) => ({ id: c.dataset.id, name: c.dataset.name, price: Number(c.dataset.price), qty: qtyOf(c) }));
+    if (!items.length) return;
+    try { sessionStorage.setItem(STORE_KEY, JSON.stringify(items)); } catch (e) {}
+    buyBtn.disabled = true;
+    buyBtn.textContent = "Memproses…";
+    setTimeout(() => window.location.assign("form.html"), 250);
+  });
+
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".choose, .buy, .qty-btn");
+    if (!btn || btn.disabled) return;
+    const r = btn.getBoundingClientRect();
+    const x = e.clientX || r.left + r.width / 2;
+    const y = e.clientY || r.top + r.height / 2;
+    const d = Math.max(r.width, r.height) * 1.1;
+    const s = document.createElement("span");
+    s.className = "ripple";
+    s.style.width = s.style.height = d + "px";
+    s.style.left = x - r.left - d / 2 + "px";
+    s.style.top = y - r.top - d / 2 + "px";
+    btn.appendChild(s);
+    s.addEventListener("animationend", () => s.remove());
+  });
+})();
+</script>
+</body>
+</html>
